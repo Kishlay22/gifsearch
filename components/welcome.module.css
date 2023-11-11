@@ -22,6 +22,7 @@
     border-radius: 4rem;
     margin:2.4rem 20%;
     transition: 600ms;
+    text-align: center;
 }
 
 .loginrefer:hover{

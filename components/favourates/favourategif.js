@@ -3,6 +3,7 @@ import classes from './FavourateList.module.css';
 import {useRouter} from 'next/router';
 import {auth} from '../../config/firebase';
 import { signOut } from 'firebase/auth';
+import Link from 'next/link';
 
 function FavourateList(){
     const [favourate,setFavourates]=useState([]);
@@ -49,6 +50,7 @@ useEffect(()=>{
          <div className={classes.header}>
             <div className={classes.title}>AlphaBI GIF Website</div>
             <div className={classes.leftportion}>
+                <Link className={classes.reverselink}href='./gifhome'>Back</Link>
             <button onClick={signoutHandler} className={classes.col2part}>Logout  </button>
             </div>
         </div>
