@@ -1,0 +1,17 @@
+.aboutme{
+    margin: 4% auto;
+    border:1.2rem solid rgb(0, 217, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    width: 50vw;
+}
+
+.myname{
+    color: rgb(0, 0, 0);
+    font-size: 4rem;
+}
+.mydetails{
+    font-size: larger;
+}

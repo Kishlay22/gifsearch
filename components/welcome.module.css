@@ -1,0 +1,32 @@
+.welcomepage{
+    margin-top: 18%;
+}
+
+.welcome{
+    text-align: center;
+    margin: auto;
+    font-size: 4rem;
+    color: rgb(29, 25, 135);
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+}
+.loginrefer{
+    font-size: 2rem;
+    color: rgb(217, 103, 103);
+    text-decoration: none;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    border: solid 0.1rem rgb(217, 103, 103) ;
+    border-radius: 4rem;
+    margin:2.4rem 20%;
+    transition: 600ms;
+}
+
+.loginrefer:hover{
+    color: aliceblue;
+    font-size: 2.2rem;
+    background-color: rgb(217, 103, 103);
+    border: solid 0.1rem aliceblue;
+}
