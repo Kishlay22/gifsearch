@@ -1,5 +1,6 @@
 .welcomepage{
     margin-top: 18%;
+    width: 98vw;
 }
 
 .welcome{
@@ -9,16 +10,18 @@
     color: rgb(29, 25, 135);
     justify-content: center;
     align-items: center;
-    width: 98vw;
+    box-sizing: content-box;
+    
 }
 .loginrefer{
     font-size: 2rem;
-    color: rgb(217, 103, 103);
+    color: aliceblue;
     text-decoration: none;
     box-sizing: content-box;
     display: flex;
     justify-content: center;
-    border: solid 0.1rem rgb(217, 103, 103) ;
+    background-color: rgb(217, 103, 103);
+    border: solid 0.1rem aliceblue;
     border-radius: 4rem;
     margin:2.4rem 20%;
     transition: 600ms;
@@ -26,8 +29,18 @@
 }
 
 .loginrefer:hover{
-    color: aliceblue;
+    color: rgb(0, 255, 174);
     font-size: 2.2rem;
     background-color: rgb(217, 103, 103);
-    border: solid 0.1rem aliceblue;
+    border: solid 0.1rem rgb(0, 255, 174);
+}
+
+@media screen and (max-width:450px)
+{
+  .welcome{
+    font-size: 3rem;
+  }
+  .loginrefer{
+    font-size: 1.5rem;
+  }
 }

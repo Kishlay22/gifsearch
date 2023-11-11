@@ -60,8 +60,8 @@ const Router=useRouter();
           <button>Register</button>
         </div>
         <div className={`${classes.control} ${classes.loginpart}`} >
-           <div> Already Registered---&nbsp; &nbsp;
-            <Link className={classes.loginbtn} href='/login'>Click here to login</Link></div> 
+           <div> Already Registered---&nbsp; &nbsp;</div> 
+            <Link className={classes.loginbtn} href='/login'>Click here to login</Link>
         </div>
       </form>
       
