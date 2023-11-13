@@ -32,7 +32,7 @@ const Router=useRouter();
    ).catch((error)=>{
     const errorCode=error.code;
     const errorMessage=error.message;
-    alert(errorMessage);
+    alert("User already exist");
    })
   }
 
