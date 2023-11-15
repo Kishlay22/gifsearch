@@ -43,9 +43,9 @@ function signoutHandler(event) {
       console.log(gif);
       fetch('https://alphabi-7aa14-default-rtdb.firebaseio.com/favourates.json',
             {method:'POST',
-            body:JSON.stringify([{
+            body:JSON.stringify({
                 user:gif.images.fixed_height.url
-            }])
+            })
 
             }
        )
@@ -66,7 +66,6 @@ return(
         <button className={classes.action} onClick={handleSubmit}>Search</button>
     </form>
     <div className={classes.gridgallery}>
-        {!gifs &&<h2>Enter a keyword to search GIF...</h2>}
      {gifs && gifs.slice(start, end).map((gif) => (
         <div className={classes.griditem}>
         <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />

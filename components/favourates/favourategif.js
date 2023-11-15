@@ -15,7 +15,7 @@ function FavourateList(){
     if(!response)
       throw new Error('Something Went Wrong');
     const data=await response.json();
-    console.log(data);
+    console.log("favourates",data);
     const loadedFavourates=[];
     for (const key in data){
       loadedFavourates.push({

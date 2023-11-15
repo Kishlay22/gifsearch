@@ -3,6 +3,7 @@ import Welcome from "@/components/welcome";
 function MainApp(){
   return (
    <Layout><Welcome/></Layout> 
+
   )
 }
 
