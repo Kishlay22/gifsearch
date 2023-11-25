@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 const Gif = () => {
-const Router=useRouter();    
+const Router=useRouter();   
 function signoutHandler(event) {
         event.preventDefault();
     signOut(auth).then(() => {
@@ -16,7 +16,7 @@ function signoutHandler(event) {
         console.log("error");
   });
 }
-
+    const [isLoading,setIsLoading]=useState(false);
     const [inputvalue,setInputvalue]=useState('');
     const [searchQuery,setSearchQuery]=useState('');
     const API_KEY = "GlVGYHkr3WSBnllca54iNt0yFbjz7L65";
@@ -29,6 +29,7 @@ function signoutHandler(event) {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         setInputvalue(e.target.value);
         setSearchQuery(e.target.value);
         
@@ -36,6 +37,8 @@ function signoutHandler(event) {
         const parsedData = await response.json();
         console.log(parsedData.data);
         setGifs(parsedData.data);
+        setTimeout(() => {  setIsLoading(false); }, 1000);
+        
     }
 
     function addFavourate(gif)
@@ -53,7 +56,7 @@ function signoutHandler(event) {
     }
            
 return(
-    <div>
+    <>
     <div className={classes.header}>
             <div className={classes.col1}>AlphaBI GIF Website</div>
             <div className={classes.leftcol1}>
@@ -65,7 +68,8 @@ return(
         <input type='text' className={classes.searchbox} placeholder='Article Name or keywords...' onChange={handleSubmit} value={inputvalue} />
         <button className={classes.action} onClick={handleSubmit}>Search</button>
     </form>
-    <div className={classes.gridgallery}>
+    {isLoading && <img src='https://media.tenor.com/hlKEXPvlX48AAAAi/loading-loader.gif' width="200" height="200" style={{margin:'2rem 0 0 40rem'}} className="giphy-embed" allowFullScreen></img>}
+    {!isLoading && <div className={classes.gridgallery}>
      {gifs && gifs.slice(start, end).map((gif) => (
         <div className={classes.griditem}>
         <img key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} />
@@ -75,17 +79,17 @@ return(
         </div>
         </div>
     ))}
-    </div>
-    <div className={classes.paginggif}>
-        <button className={classes.pagingbutton} disabled={start === 0} onClick={() => { setStart(start - 12); setEnd(end - 12)
-         setFirstPage(firstPage-1); setSecondPage(secondPage-1); setThirdPage(thirdPage-1) }}>&lt; Previous</button>
+    </div>}
+    {!isLoading && <div className={classes.paginggif}>
+        <button className={classes.pagingbutton} disabled={firstPage === 1} onClick={() => { setStart(start - 12); setEnd(end - 12)
+         setFirstPage(firstPage-3); setSecondPage(secondPage-3); setThirdPage(thirdPage-3) }}>&lt; Previous</button>
         <button className={classes.pagingbutton} onClick={() => { setStart(start); setEnd(end)}}>{firstPage}</button>
         <button className={classes.pagingbutton} onClick={() => { setStart(start + 12); setEnd(end + 12) }}>{secondPage}</button>
         <button className={classes.pagingbutton}  onClick={() => { setStart(start + 24); setEnd(end + 24) }}>{thirdPage}</button>
         <button className={classes.pagingbutton} onClick={()=>{ setStart(start + 12); setEnd(end + 12); 
-         setFirstPage(firstPage+1); setSecondPage(secondPage+1); setThirdPage(thirdPage+1)}}>Next &gt;</button>
-    </div>
-</div>
+         setFirstPage(firstPage+3); setSecondPage(secondPage+3); setThirdPage(thirdPage+3)}}>Next &gt;</button>
+    </div>}
+</>
 )   
     }
     export default Gif;  

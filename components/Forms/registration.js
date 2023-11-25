@@ -12,6 +12,8 @@ function Registration(props) {
   const passwordInputRef = useRef();
   const confirmPasswordInputRef = useRef();
 const Router=useRouter();
+
+
   function submitHandler(event) {
     event.preventDefault();
 
